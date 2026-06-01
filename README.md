@@ -1,7 +1,7 @@
 # TransMed: Cross-Lingual Clinical Outcome Prediction in Low-Resource Healthcare Settings
 
 <p align="center">
-  <img src="assets/transmed_banner.png" alt="TransMed" width="800"/>
+  <img src="https://github.com/secrakib/Transmed/blob/main/overview.png" alt="TransMed" width="800"/>
 </p>
 
 <p align="center">
