@@ -53,18 +53,18 @@ This work investigates three fundamental research questions:
         ▼              ▼              ▼              ▼
       OpusMT      BanglaT5NMT   Google Translate    ChatGPT
         │              │              │              │
-        └──────────────┴──────────────┴──────────────┘
+        └──────────────┴──────────────┴──────────────┴
                                │
                                ▼
-              Bengali / Code-Mixed Clinical Corpora
+              Bengali / Partially Translated Clinical Corpora
                                │
                                ▼
             Multilingual Transformer Models
                                │
-                  ┌─────────────┬─────────────┬
-                  │             │             │
-                  ▼             ▼             ▼
-                mBERT       XLM-RoBERTa    IndicBERT
+        ┌─────────────┬─────────────┬─────────────┬
+        │             │             │             │
+        ▼             ▼             ▼             ▼
+      mBERT      XLM-RoBERTa    BanglaBERT    BanglishBERT
                                │
                                ▼
                     Clinical Prediction
@@ -77,6 +77,8 @@ This work investigates three fundamental research questions:
                                ▼
                     Evaluation & Analysis
 ```
+
+The TransMed framework translates English clinical notes from the MIMIC-III database into Bengali and code-mixed Bengali using multiple machine translation systems (OpusMT, BanglaT5NMT, Google Translate, and ChatGPT). The translated corpora are subsequently used to fine-tune multilingual and Bengali-specific transformer models, including mBERT, XLM-RoBERTa, BanglaBERT, and BanglishBERT, for downstream clinical outcome prediction tasks. Model performance is evaluated on mortality prediction and length-of-stay prediction to identify the most effective translation–model combinations for low-resource healthcare settings.
 
 ---
 
