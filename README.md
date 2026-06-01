@@ -124,39 +124,72 @@ Multiclass classification task predicting hospitalization duration categories.
 ```text
 TransMed/
 │
-├── data/
-│   ├── processed/
-│   ├── translated/
-│   └── metadata/
+├── Codes/
+│   │
+│   ├── Ablation Study and Avg. of seeds/
+│   │   │
+│   │   ├── Ablation Study/
+│   │   │   ├── Code/
+│   │   │   │   ├── Custom Loss and Weighting/
+│   │   │   │   └── Oversampling/
+│   │   │   └── Ablation study Results.docx
+│   │   │
+│   │   └── Average+-std of four models on three different seeds/
+│   │       ├── Length Of stay prediction/
+│   │       │   ├── Code/
+│   │       │   └── Results (.xlsx)
+│   │       │
+│   │       └── Mortality Prediction/
+│   │           ├── Code/
+│   │           └── Results (.xlsx)
+│   │
+│   ├── Computatuional Analysis/
+│   │   └── BanglaNMT and Opus MT/
+│   │       ├── Notebook/
+│   │       └── Result/
+│   │
+│   ├── Length Of Stay/
+│   │   └── Notebook/
+│   │       ├── Dataset Creation/
+│   │       ├── Google Translate Translation Code/
+│   │       └── Sliding Window Code For OPUS & BanglaNMT Translation/
+│   │
+│   └── Mortality Prediction/
+│       └── Notebook/
+│           ├── 1000 instances BanglaNMT/
+│           ├── 1000 instances Google/
+│           └── 1000 instances Opus/
 │
-├── translation/
-│   ├── opusmt/
-│   ├── banglat5/
-│   ├── google/
-│   └── chatgpt/
-│
-├── models/
-│   ├── mbert/
-│   ├── xlmr/
-│   ├── indicbert/
-│   └── banglabert/
-│
-├── training/
-│
-├── evaluation/
-│
-├── notebooks/
-│
-├── results/
-│
-├── figures/
-│
-├── requirements.txt
-│
-└── README.md
+├── LICENSE
+├── README.md
+└── .gitignore
 ```
 
----
+### Folder Description
+
+| Folder                     | Description                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Length Of Stay**         | Dataset construction, machine translation, and LOS prediction experiments.                       |
+| **Mortality Prediction**   | Mortality prediction experiments using translated clinical notes.                                |
+| **Computational Analysis** | Runtime and computational efficiency analysis of translation systems.                            |
+| **Ablation Study**         | Experiments investigating oversampling, custom loss functions, and weighting strategies.         |
+| **Average ± Std of Seeds** | Reproducibility experiments across multiple random seeds with aggregated performance statistics. |
+
+### Included Resources
+
+The repository contains:
+
+* Dataset preparation notebooks
+* Translation pipelines (OpusMT, BanglaNMT, Google Translate)
+* Mortality prediction experiments
+* Length-of-stay prediction experiments
+* Computational efficiency analyses
+* Ablation studies
+* Multi-seed reproducibility experiments
+* Statistical summaries and result spreadsheets
+
+All experiments reported in the manuscript can be reproduced using the notebooks and supplementary result files provided in this repository.
+
 
 ## Installation
 
