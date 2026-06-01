@@ -102,7 +102,6 @@ The study evaluates four translation approaches:
 | BanglaT5NMT         | Bengali NMT                |
 | Google Translate    | Commercial NMT             |
 | ChatGPT Translation | Large Language Model       |
-| Code-Mixed Variants | Hybrid Clinical Text       |
 
 ### Language Models
 
@@ -110,7 +109,7 @@ The study evaluates four translation approaches:
 | ----------- | ------------------------- |
 | mBERT       | Multilingual BERT         |
 | XLM-RoBERTa | Cross-lingual Transformer |
-| IndicBERT   | Indic Language Model      |
+| BanglishBERT | Banglish  Transformer    |
 | BanglaBERT  | Bengali Transformer       |
 
 ### Prediction Tasks
@@ -169,6 +168,7 @@ TransMed/
 ├── LICENSE
 ├── README.md
 └── .gitignore
+└── overview.png
 ```
 
 ### Folder Description
@@ -177,7 +177,7 @@ TransMed/
 | -------------------------- | ------------------------------------------------------------------------------------------------ |
 | **Length Of Stay**         | Dataset construction, machine translation, and LOS prediction experiments.                       |
 | **Mortality Prediction**   | Mortality prediction experiments using translated clinical notes.                                |
-| **Computational Analysis** | Runtime and computational efficiency analysis of translation systems.                            |
+| **Computational Analysis** | Runtime and computational efficiency analysis experiments of translation systems.                |
 | **Ablation Study**         | Experiments investigating oversampling, custom loss functions, and weighting strategies.         |
 | **Average ± Std of Seeds** | Reproducibility experiments across multiple random seeds with aggregated performance statistics. |
 
@@ -215,57 +215,6 @@ python -m venv transmed_env
 source transmed_env/bin/activate
 ```
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Running Experiments
-
-### Step 1: Data Preparation
-
-```bash
-python preprocessing/prepare_dataset.py
-```
-
-### Step 2: Machine Translation
-
-```bash
-python translation/run_translation.py
-```
-
-### Step 3: Fine-Tuning
-
-```bash
-python training/train.py
-```
-
-### Step 4: Evaluation
-
-```bash
-python evaluation/evaluate.py
-```
-
----
-
-## Main Results
-
-### Best Baseline Performance
-
-| Task                      | AUC-ROC |
-| ------------------------- | ------- |
-| Length of Stay Prediction | 65.3%   |
-| Mortality Prediction      | 64.9%   |
-
-### Mortality Prediction with Cost-Sensitive Learning
-
-| Metric  | Value  |
-| ------- | ------ |
-| AUC-ROC | 75.05% |
-
 ### Key Finding
 
 Translation quality alone does not reliably predict downstream clinical performance. The relationship between BLEU scores and clinical effectiveness varies substantially across tasks, suggesting that conventional machine translation evaluation metrics may not adequately capture clinical utility.
@@ -297,36 +246,7 @@ No identifiable patient information is included in this repository.
 
 ---
 
-## Code Availability
 
-All source code required to reproduce the experiments reported in the manuscript is publicly available at:
-
-https://github.com/secrakib/Transmed
-
-The repository includes:
-
-* Data preprocessing code
-* Translation workflows
-* Model fine-tuning scripts
-* Evaluation pipelines
-* Statistical analysis procedures
-* Result generation utilities
-
----
-
-## Reproducibility
-
-To support transparent and reproducible research, we provide:
-
-* Fixed random seeds
-* Hyperparameter configurations
-* Model checkpoints (where permitted)
-* Evaluation scripts
-* Statistical analysis notebooks
-
-Researchers should be able to reproduce all reported results after obtaining authorized access to MIMIC-III.
-
----
 
 ## Citation
 
@@ -359,7 +279,7 @@ This project is released under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-## Acknowledgements
+
 
 This work utilizes the MIMIC-III Clinical Database made available through PhysioNet and builds upon advances in multilingual NLP, machine translation, and clinical artificial intelligence research.
 
