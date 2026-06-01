@@ -43,33 +43,39 @@ This work investigates three fundamental research questions:
 ## Framework Architecture
 
 ```text
-MIMIC-III Clinical Notes
-           │
-           ▼
-  Machine Translation
-           │
- ┌─────────┼─────────┐
- │         │         │
- ▼         ▼         ▼
-OpusMT  BanglaT5NMT  Google Translate
-           │
-           ▼
-      ChatGPT
-           │
-           ▼
-Translated Clinical Corpora
-           │
-           ▼
- Multilingual Transformer Models
-           │
- ┌─────────┼─────────┐
- │                     │
- ▼                     ▼
-Mortality        Length of Stay
-Prediction       Prediction
-           │
-           ▼
-     Evaluation
+                    MIMIC-III Clinical Notes
+                               │
+                               ▼
+                    Translation Layer
+                               │
+        ┌──────────────┬──────────────┬──────────────┬
+        │              │              │              │
+        ▼              ▼              ▼              ▼
+      OpusMT      BanglaT5NMT   Google Translate    ChatGPT
+        │              │              │              │
+        └──────────────┴──────────────┴──────────────┘
+                               │
+                               ▼
+              Bengali / Code-Mixed Clinical Corpora
+                               │
+                               ▼
+            Multilingual Transformer Models
+                               │
+                  ┌─────────────┬─────────────┬
+                  │             │             │
+                  ▼             ▼             ▼
+                mBERT       XLM-RoBERTa    IndicBERT
+                               │
+                               ▼
+                    Clinical Prediction
+                               │
+                 ┌─────────────┴─────────────┐
+                 │                           │
+                 ▼                           ▼
+        Mortality Prediction      Length-of-Stay Prediction
+                               │
+                               ▼
+                    Evaluation & Analysis
 ```
 
 ---
