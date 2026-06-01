@@ -1,0 +1,22 @@
+============================================================
+TRANSLATION BENCHMARK RESULTS
+============================================================
+
+opus-mt-en-bn
+  Chunk Size     : 300 chars
+  Model Size     : 582.2 MB
+  Parameters     : 76.3M
+  Avg Inference  : 0.729 sec / 300-char chunk
+
+banglat5-nmt
+  Chunk Size     : 800 chars
+  Model Size     : 945.6 MB
+  Parameters     : 296.9M
+  Avg Inference  : 2.485 sec / 800-char chunk
+
+google-translate
+  Chunk Size     : 300 chars
+  Model Size     : N/A
+  Parameters     : N/A
+  Avg Inference  : 0.104 sec / 300-char chunk
+============================================================
